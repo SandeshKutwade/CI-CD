@@ -4,8 +4,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                dir('Task_manager/pom.xml')
+                dir('Task_manager/pom.xml'){
                 sh 'mvn clean package'
+                }
             }
         }
         
