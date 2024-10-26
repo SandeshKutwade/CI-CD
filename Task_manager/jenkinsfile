@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                dir('Task_manager/pom.xml'){
+                dir('/var/lib/jenkins/workspace/First/Task_manager'){
                 sh 'mvn clean package'
                 }
             }
