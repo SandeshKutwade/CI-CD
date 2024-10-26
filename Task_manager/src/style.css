@@ -1,0 +1,42 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+    background-color:rgb(72, 199, 161);
+}
+.container{
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgb(0, 0, 0.3);
+}
+h1{
+    text-align: center;
+}
+#taskinput{
+    width: calc(100% - 85px);
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+}
+#addtaskbtn{
+    padding: 10px 20px;
+    background-color:lightseagreen;
+    color: wheat;
+    border: none;
+    cursor: pointer;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+li{
+    background: #f9f9f9;
+    margin: 5x 0;
+    padding: 10px;
+    border-radius: 4px;
+}
+li.completed{
+    text-decoration: line-through;
+    color: grey;
+}    
