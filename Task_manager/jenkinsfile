@@ -16,6 +16,13 @@ pipeline {
                 // Add test steps
             }
         }
+        stage('Docker_image'){
+            steps {
+                script{
+                    dockerImage = docker.build('sandeshdockerhub/Task_manager')
+                }
+            }
+        }
        
     }
 }
