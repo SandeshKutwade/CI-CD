@@ -19,7 +19,7 @@ pipeline {
         stage('Docker_image'){
             steps {
                 script{
-                    dockerImage = docker.build('sandeshdockerhub/Task_manager')
+                    dockerImage = docker.build('sandeshdockerhub/task_manager')
                 }
             }
         }
