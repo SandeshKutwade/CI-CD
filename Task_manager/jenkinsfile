@@ -19,9 +19,7 @@ pipeline {
                 junit testResults: '**/surefire-reports/*.xml'
                 archive '**/target/spring-petclinic-*.jar'
                 }
-                }
-            }
-        
+                }      
         stage('Test') {
             steps {
                 echo 'Run your tests here'
@@ -35,4 +33,5 @@ pipeline {
             }
         }
         // Then Run docker images command to see above image
+}
 }
