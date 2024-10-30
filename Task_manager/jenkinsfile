@@ -15,6 +15,7 @@ pipeline {
             steps {
                 steps { 
                     withSonarQubeEnv(credentialsId: 'FixingProject', installationName: 'SonarCloud') 
+                }
             }
         }
         
