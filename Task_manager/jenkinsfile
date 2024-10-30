@@ -37,4 +37,3 @@ pipeline {
         }
         // Then Run docker images command to see above image
 }
-}
