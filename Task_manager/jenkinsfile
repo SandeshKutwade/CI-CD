@@ -18,16 +18,18 @@ pipeline {
 
 
 				sh '/opt/maven/bin/mvn clean package org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar -Dsonar.organization= Fixing -Dsonar.projectKey= fixing'
-                }
+            }
                 junit testResults: '**/surefire-reports/*.xml'
                 archive '**/target/todo-webapp-1.0.SNAPSHOT-*.jar',allowEmptyArchive: true
-                }
-                }      
+        }
+          
+
         stage('Test') {
             steps {
                 echo 'Run your tests here'
             }
         }
+
         stage('Docker_image'){
             steps {
                 script{
@@ -35,5 +37,5 @@ pipeline {
                 }
             }
         }
-        // Then Run docker images command to see above image
+    }               // Then Run docker images command to see above image
 }
