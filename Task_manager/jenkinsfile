@@ -8,7 +8,16 @@ pipeline {
             steps {
                 dir('/var/lib/jenkins/workspace/Fixing/Task_manager'){
                 sh 'mvn clean package'
-                // dir('/var/lib/jenkins/workspace/First/Task_manager')
+                }
+            }
+        }
+         stage('SonarQube Analysis') {
+            steps {
+                script {
+                    def scannerHome = tool 'SonarCloud'
+                    withSonarQubeEnv('SonarQube') {
+                        sh "${scannerHome}/bin/sonar-scanner"
+                    }
                 }
             }
         }
@@ -16,7 +25,6 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Run your tests here'
-                // Add test steps
             }
         }
         stage('Docker_image'){
@@ -26,6 +34,8 @@ pipeline {
                 }
             }
         }
+        // Then Run docker images command to see above image
        
     }   
 }
+
