@@ -13,9 +13,13 @@ pipeline {
         }
          stage('SonarQube Analysis') {
             steps {
-                steps { 
-                    withSonarQubeEnv(credentialsId: 'FixingProject', installationName: 'SonarCloud') 
-                }
+                withSonarQubeEnv(credentialsId: 'FixingProject', installationName: 'SonarCloud') { // You can override the credential to be used
+				sh '/opt/maven/bin/mvn clean package org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar -D sonar.organization=<SandeshKutwade> -D sonar.projectKey=<sandeshkutwade123>'
+			}
+			junit testResults: '**/surefire-reports/*.xml'
+			archive '**/target/spring-petclinic-*.jar'
+		}
+	}
             }
         }
         
