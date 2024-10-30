@@ -22,7 +22,7 @@ pipeline {
         stage('Docker_image'){
             steps {
                 script{
-                    dockerImage = docker.build('sandeshdockerhub/task_manager','-f /var/lib/jenkins/workspace/Fixing/Task_manager/dockerfile /var/lib/jenkins/workspace/Fixing/Task_manager')
+                    dockerImage = docker.build('sandeshdockerhub/task_manager','-f /var/lib/jenkins/workspace/Fixing/Task_manager/src/dockerfile /var/lib/jenkins/workspace/Fixing/Task_manager')
                 }
             }
         }
