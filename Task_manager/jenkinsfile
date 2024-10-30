@@ -17,7 +17,7 @@ pipeline {
 				sh '/opt/maven/bin/mvn clean package org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar -D sonar.organization=<Fixing> -D sonar.projectKey=<fixing>'
                 }
                 junit testResults: '**/surefire-reports/*.xml'
-                archive '**/target/spring-petclinic-*.jar'
+                archive '**/target/todo-webapp-1.0.SNAPSHOT-*.jar'
                 }
                 }      
         stage('Test') {
