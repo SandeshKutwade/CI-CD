@@ -19,13 +19,13 @@ pipeline {
                 // Add test steps
             }
         }
-        // stage('Docker_image'){
-        //     steps {
-        //         script{
-        //             dockerImage = docker.build('sandeshdockerhub/task_manager','-f /var/lib/jenkins/workspace/First/Task_manager/dockerfile /var/lib/jenkins/workspace/First/Task_manager')
-        //         }
-        //     }
+        stage('Docker_image'){
+            steps {
+                script{
+                    dockerImage = docker.build('sandeshdockerhub/task_manager','-f /var/lib/jenkins/workspace/First/Task_manager/dockerfile /var/lib/jenkins/workspace/First/Task_manager')
+                }
+            }
         }
        
-    }
-// }
+    }   
+}
