@@ -13,6 +13,7 @@ pipeline {
         }
         stage('SonarQube Analysis') {
             steps {
+                dir('/var/lib/jenkins/workspace/Fixing_code/Task_manager')
                 // withSonarQubeEnv(credentialsId: 'SonarCloud', installationName: 'SonarCloud') { // You can override the credential to be used
                 withSonarQubeEnv('SonarCloud') {
 				sh '/opt/maven/bin/mvn clean package org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar -Dsonar.organization= Fixing -Dsonar.projectKey= fixing'
