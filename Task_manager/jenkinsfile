@@ -59,7 +59,7 @@ pipeline {
             steps {
                 dir('/var/lib/jenkins/workspace/Fixing_code/Task_manager') {
                     withSonarQubeEnv('SonarCloud') {
-                        sh '/opt/maven/bin/mvn clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar -Dsonar.organization=Fixing -Dsonar.projectKey=fixing'
+                        sh '/opt/maven/bin/mvn clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar -Dsonar.organization=Fixing -Dsonar.projectKey=fixing_done'
                     }
                 }
                 junit testResults: '**/surefire-reports/*.xml'
