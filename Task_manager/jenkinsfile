@@ -48,7 +48,7 @@ pipeline {
         maven 'MAVEN_3.9.6'
     }
     environment {
-        DOCKER_HUB_CREDENTIALS = credentials('Docker')
+        DOCKER_HUB_CREDENTIALS = credentials('docker-hub-credentials')
     }
     stages {
         stage('Build') {
