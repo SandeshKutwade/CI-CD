@@ -63,7 +63,7 @@ pipeline {
                     }
                 }
                 junit testResults: '**/surefire-reports/*.xml'
-                archiveArtifacts artifacts: '**/target/todo-webapp-1.0.SNAPSHOT-*.jar', allowEmptyArchive: true
+                archiveArtifacts artifacts: '**/target/todo-webapp-1.0.SNAPSHOT-*.jar', allowEmptyArchive: true, allowEmptyResults: true
             }
         }
         stage('Test') {
