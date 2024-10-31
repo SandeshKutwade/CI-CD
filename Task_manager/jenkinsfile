@@ -47,6 +47,9 @@ pipeline {
     tools {
         maven 'MAVEN_3.9.6'
     }
+    environment {
+        DOCKER_HUB_CREDENTIALS = credentials(Docker)
+    }
     stages {
         stage('Build') {
             steps {
@@ -75,6 +78,10 @@ pipeline {
             steps {
                 script {
                     dockerImage = docker.build('sandeshdockerhub/task_manager', '-f /var/lib/jenkins/workspace/Fixing_code/Task_manager/src/dockerfile /var/lib/jenkins/workspace/Fixing_code/Task_manager')
+                }
+                //login
+                script {
+                    sh "echo $DOCKER_HUB_CREDENTIALS_PSW | docker login -u $DOCKER_HUB_CREDENTIALS_USER --password-stdin"
                 }
             }
         }
