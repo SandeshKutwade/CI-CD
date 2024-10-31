@@ -62,8 +62,8 @@ pipeline {
                         sh '/opt/maven/bin/mvn clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar -Dsonar.organization=sandeshkutwade123 -Dsonar.projectKey=SandeshKutwade_CI-CD'
                     }
                 }
-                junit testResults: '**/surefire-reports/*.xml'
-                archiveArtifacts artifacts: '**/target/todo-webapp-1.0.SNAPSHOT-*.jar', allowEmptyArchive: true, allowEmptyResults: true
+                junit testResults: '**/surefire-reports/*.xml', allowEmptyResults: true
+                archiveArtifacts artifacts: '**/target/todo-webapp-1.0.SNAPSHOT-*.jar', allowEmptyArchive: true
             }
         }
         stage('Test') {
