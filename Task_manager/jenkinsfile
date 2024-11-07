@@ -62,7 +62,7 @@ pipeline {
             steps {
                 dir('/var/lib/jenkins/workspace/Testing/Task_manager') {
                     withSonarQubeEnv('SonarCloud') {
-                        sh '/opt/maven/bin/mvn clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar -Dsonar.organization=sandeshkutwade -Dsonar.projectKey=SandeshKutwade123'
+                        sh '/opt/maven/bin/mvn clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar -Dsonar.organization=sandeshkutwade123 -Dsonar.projectKey=SandeshKutwade_CI-CD'
                     }
                 }
                 junit testResults: '**/surefire-reports/*.xml', allowEmptyResults: true
