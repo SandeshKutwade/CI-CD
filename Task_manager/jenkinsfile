@@ -53,14 +53,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                dir('/var/lib/jenkins/workspace/Fixing_code/Task_manager') {
+                dir('/var/lib/jenkins/workspace/Testing/Task_manager') {
                     sh 'mvn clean package'
                 }
             }
         }
         stage('SonarQube Analysis') {
             steps {
-                dir('/var/lib/jenkins/workspace/Fixing_code/Task_manager') {
+                dir('/var/lib/jenkins/workspace/Testing/Task_manager') {
                     withSonarQubeEnv('SonarCloud') {
                         sh '/opt/maven/bin/mvn clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar -Dsonar.organization=sandeshkutwade123 -Dsonar.projectKey=SandeshKutwade_CI-CD'
                     }
