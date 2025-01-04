@@ -74,19 +74,19 @@ pipeline {
                 echo 'Run your tests here'
             }
         }
-        stage('Docker Image') {
-            steps {
-                script {
-                    dockerImage = docker.build('sandeshdockerhub/task_manager', '-f /var/lib/jenkins/workspace/Testing/Task_manager/src/dockerfile /var/lib/jenkins/workspace/Testing/Task_manager')
-                }
-                //login
-                script {
-                    sh "echo $DOCKER_HUB_CREDENTIALS_PSW | docker login -u $DOCKER_HUB_CREDENTIALS_USR --password-stdin"
-                }
-                script {
-                    dockerImage.push()
-                }
-            }
-        }
+        // stage('Docker Image') {
+        //     steps {
+        //         script {
+        //             dockerImage = docker.build('sandeshdockerhub/task_manager', '-f /var/lib/jenkins/workspace/Testing/Task_manager/src/dockerfile /var/lib/jenkins/workspace/Testing/Task_manager')
+        //         }
+        //         //login
+        //         script {
+        //             sh "echo $DOCKER_HUB_CREDENTIALS_PSW | docker login -u $DOCKER_HUB_CREDENTIALS_USR --password-stdin"
+        //         }
+        //         script {
+        //             dockerImage.push()
+        //         }
+        //     }
+        // }
     }
 }
